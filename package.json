@@ -1,0 +1,24 @@
+{
+  "name": "serverless-example",
+  "version": "1.0.0",
+  "description": "Serverless arquitecture example with AWS lambdas",
+  "main": "index.js",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miyoda/serverless-cqrs.git"
+  },
+  "keywords": [
+    "cqrs",
+    "nodejs",
+    "serverless",
+    "lambda"
+  ],
+  "author": "miyoda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miyoda/serverless-cqrs/issues"
+  },
+  "homepage": "https://github.com/miyoda/serverless-cqrs#readme"
+}

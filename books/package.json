@@ -1,0 +1,13 @@
+{
+  "name": "serverless-cqrs-books",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "aws-sdk": "^2.185.0",
+    "serverless": "^1.26.0",
+    "serverless-dynamodb-local": "^0.2.27",
+    "serverless-offline": "^3.16.0",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {}
+}

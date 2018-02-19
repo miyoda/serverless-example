@@ -1,0 +1,74 @@
+service: serverless-example # NOTE: update this with your service name
+
+plugins:
+  - serverless-dynamodb-local
+  - serverless-offline #serverless-offline needs to be last in the list
+
+custom:
+  dynamodb:
+    start:
+      migrate: true
+  serverless-offline-sns:
+    port: 4002
+    debug: true
+  serverless-offline:
+    babelOptions:
+      presets: ["env"]
+
+provider:
+  name: aws
+  stage: dev
+  region: eu-west-3
+  runtime: nodejs4.3
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+
+functions:
+  createBook:
+    handler: handler.createBook
+    events:
+      - http: 'POST /books'
+  updateBook:
+    handler: handler.updateBook
+    events:
+      - http: 'PUT /books/{id}'
+  getBooks:
+    handler: handler.getBooks
+    events:
+      - http: 'GET /books'
+  getBook:
+    handler: handler.getBook
+    events:
+      - http: 'GET /books/{id}'
+  deleteBooks:
+    handler: handler.deleteBook
+    events:
+      - http: 'DELETE /books/{id}'
+  
+resources:
+  Resources:
+    BooksDynamoDBTable:
+      Type: 'AWS::DynamoDB::Table'
+      Properties:
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}
+        AttributeDefinitions:
+          -
+            AttributeName: id
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: id
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
