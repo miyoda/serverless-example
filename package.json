@@ -7,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/miyoda/serverless-cqrs.git"
+    "url": "git+https://github.com/miyoda/serverless-example.git"
   },
   "keywords": [
     "cqrs",
@@ -18,7 +18,7 @@
   "author": "miyoda",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/miyoda/serverless-cqrs/issues"
+    "url": "https://github.com/miyoda/serverless-example/issues"
   },
-  "homepage": "https://github.com/miyoda/serverless-cqrs#readme"
+  "homepage": "https://github.com/miyoda/serverless-example#readme"
 }
