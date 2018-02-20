@@ -1,4 +1,4 @@
-# serverless-cqrs
+# serverless-example
 Serverless example with AWS lambdas
 
 
@@ -11,7 +11,7 @@ https://serverless.com/framework/docs/providers/aws/guide/credentials/
 
 # CRUD of books example
 
-## Install dependencies:
+## Install dependencies
 >cd books && npm install
 
 ## Running on local

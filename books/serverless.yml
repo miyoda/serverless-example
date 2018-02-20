@@ -1,4 +1,4 @@
-service: serverless-example # NOTE: update this with your service name
+service: serverless-example-books
 
 plugins:
   - serverless-dynamodb-local
