@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 #TODO asserts
 
-#SERVICE_URL=http://localhost:3000
-SERVICE_URL=https://XXXXXXXX.execute-api.eu-west-3.amazonaws.com/dev
-BOOK_ID=47af9c20-159d-11e8-b10f-4d39a310fc15
+SERVICE_URL=http://localhost:3000
+#SERVICE_URL=https://XXXXXXXX.execute-api.eu-west-3.amazonaws.com/dev
 
 echo "Get Books:"
 curl -H "Content-Type: application/json" ${SERVICE_URL}/books

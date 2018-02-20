@@ -50,7 +50,7 @@ functions:
     handler: handler.getBook
     events:
       - http: 'GET /books/{id}'
-  deleteBooks:
+  deleteBook:
     handler: handler.deleteBook
     events:
       - http: 'DELETE /books/{id}'

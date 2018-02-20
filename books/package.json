@@ -9,5 +9,7 @@
     "serverless-offline": "^3.16.0",
     "uuid": "^3.2.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "babel-preset-env": "^1.6.1"
+  }
 }
