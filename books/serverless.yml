@@ -8,9 +8,6 @@ custom:
   dynamodb:
     start:
       migrate: true
-  serverless-offline-sns:
-    port: 4002
-    debug: true
   serverless-offline:
     babelOptions:
       presets: ["env"]
